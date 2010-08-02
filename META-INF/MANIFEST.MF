@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.ui,
  net.bioclipse.scripting,
  org.springframework.bundle.spring.aop,
  net.sf.cglib,
- org.springframework.osgi.aopalliance.osgi
+ org.springframework.osgi.aopalliance.osgi,
+ org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Import-Package: net.bioclipse.cdk.business,
  net.bioclipse.cdk.domain,

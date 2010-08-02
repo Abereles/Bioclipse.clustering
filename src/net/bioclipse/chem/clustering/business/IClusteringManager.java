@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010  Jeff Miller
+ * Copyright (c) 2010  Jeff Miller <jrmillerwork@gmail.com>
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
@@ -22,12 +22,18 @@ import net.bioclipse.managers.business.IBioclipseManager;
 )
 public interface IClusteringManager extends IBioclipseManager {
 	@PublishedMethod(
-	        params = "ClusterList cL, int NumberClusters",
+	        params = "ClusterList cL, int numberClusters",
 	        methodSummary = "Using default algorithms, produces" +
 	                        "NumberClusters clusters from a " +
 	                        "list of Molecules"
 	    )
-	public ClusterList doClustering(ClusterList cL, int NumberClusts);
-	public ClusterList doClustering(ClusterList cL, int NumberClusts, IDistanceAlgorithm dA, IClusteringAlgorithm cA);
+	public ClusterList doClustering(ClusterList cL, int numberClusts);
+	@PublishedMethod(
+	        params = "ClusterList cL, int numberClusters, IDistanceAlgorithm dA, IClusteringAlgorithm cA",
+	        methodSummary = "Using specified algorithms, produces" +
+	                        "NumberClusters clusters from a " +
+	                        "list of Molecules"
+	    )
+	public ClusterList doClustering(ClusterList cL, int numberClusts, IDistanceAlgorithm dA, IClusteringAlgorithm cA);
 
 }

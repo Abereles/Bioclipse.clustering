@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2010  Your Name <you@example.com>
+ * Copyright (c) 2010  Jeff Miller <jrmillerwork@gmail.com>
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2010  Jeff Miller <jrmillerwork@gmail.com>
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contact: http://www.bioclipse.net/
+ ******************************************************************************/
 package net.bioclipse.chem.clustering.clusterhandling;
 
 import net.bioclipse.core.business.BioclipseException;
@@ -11,12 +21,12 @@ public class SingleLinkAlgo implements IClusteringAlgorithm {
 		 * One pass consists of finding two closest clusters
 		 */
 		
-		combo2 priorCombo = new combo2(0,1);
+		Combo2 priorCombo = new Combo2(0,1);
 		int length = cL.getSize();
 		double curMin = LARGE_DISTANCE;
 		double curDist = 0;
-		combo2 curCombo = null;
-		combo2 minCombo = new combo2(0,0);
+		Combo2 curCombo = null;
+		Combo2 minCombo = new Combo2(0,0);
 		while(((curCombo = nChoose2(length, priorCombo))!= null)) {
 			priorCombo = curCombo;
 			curDist = calcClusterDistance(cL.getClust(curCombo.index1),
@@ -29,7 +39,7 @@ public class SingleLinkAlgo implements IClusteringAlgorithm {
 		}
 		return new ClustIndexPair(minCombo.index1,minCombo.index2);
 	}
-	private combo2 nChoose2(int length, combo2 priorCombo)
+	private Combo2 nChoose2(int length, Combo2 priorCombo)
 	{
 		/*
 		 * This function is able to find the 2-combo given the prior
@@ -38,21 +48,21 @@ public class SingleLinkAlgo implements IClusteringAlgorithm {
 		if (priorCombo.index1 < length-2){
 			
 		if (priorCombo.index2 == length-1){
-			return new combo2(priorCombo.index1+1,priorCombo.index1+2);
+			return new Combo2(priorCombo.index1+1,priorCombo.index1+2);
 		}
-		else return new combo2(priorCombo.index1, priorCombo.index2+1);
+		else return new Combo2(priorCombo.index1, priorCombo.index2+1);
 		}
-		else return (combo2) null;
+		else return (Combo2) null;
 			
 		
 			
 			
 	}
-	private class combo2
+	private class Combo2
 	{
 		int index1;
 		int index2;
-		combo2(int index1, int index2)
+		Combo2(int index1, int index2)
 		{
 			this.index1 = index1;
 			this.index2 = index2;

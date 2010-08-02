@@ -12,7 +12,7 @@ import net.bioclipse.core.business.BioclipseException;
  * so if N < total elements, it will be hit.
  */
 public class ClusterList {
-	private List<Cluster> clusterList;
+	public List<Cluster> clusterList;
 	private IClusteringAlgorithm cA;
 	
 	public void setcA(IClusteringAlgorithm cA) {

@@ -9,5 +9,35 @@
             id="net.bioclipse.chem.clustering.business.ClusteringManager">
       </scriptContribution>
    </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="net.bioclipse.chem.clustering.ClusteringPerspectiveFactory"
+            id="net.bioclipse.chem.clustering.ClusteringPerspective"
+            name="Clustering">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="net.bioclipse.chem.clustering.ViewClustering"
+            id="net.bioclipse.chem.clustering.viewClustering"
+            name="viewClustering"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <view
+               id="net.bioclipse.chem.clustering.viewClustering"
+               minimized="false"
+               ratio="0.95f"
+               relationship="top"
+               relative="org.eclipse.ui.editorss">
+         </view>
+      </perspectiveExtension>
+   </extension>
 
 </plugin>
